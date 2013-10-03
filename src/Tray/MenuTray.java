@@ -30,6 +30,7 @@ public class MenuTray extends javax.swing.JFrame {
 
         popupMenu = new java.awt.PopupMenu();
         Exit = new java.awt.MenuItem();
+        Configure = new java.awt.MenuItem();
 
         popupMenu.setActionCommand("popupMenu");
         popupMenu.setLabel("popupMenu");
@@ -42,6 +43,15 @@ public class MenuTray extends javax.swing.JFrame {
         });
         popupMenu.add(Exit);
         Exit.getAccessibleContext().setAccessibleName("menuExit");
+
+        Configure.setActionCommand("");
+        Configure.setLabel("Configure");
+        Configure.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfigureActionPerformed(evt);
+            }
+        });
+        popupMenu.add(Configure);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,6 +72,12 @@ public class MenuTray extends javax.swing.JFrame {
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         GlobalOperator.EXIT();
     }//GEN-LAST:event_ExitActionPerformed
+
+    private void ConfigureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfigureActionPerformed
+        ConfigureUserPermission userPermission = new ConfigureUserPermission();
+        userPermission.setVisible(true);
+        userPermission.show();
+    }//GEN-LAST:event_ConfigureActionPerformed
 
     /**
      * @param args the command line arguments
@@ -98,6 +114,7 @@ public class MenuTray extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.MenuItem Configure;
     public java.awt.MenuItem Exit;
     public java.awt.PopupMenu popupMenu;
     // End of variables declaration//GEN-END:variables

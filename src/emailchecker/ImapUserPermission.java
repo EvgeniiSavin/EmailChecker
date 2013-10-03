@@ -12,8 +12,8 @@ import emailchecker.UserPermissions;
  */
 public class ImapUserPermission implements UserPermissions {
     
-    private String username = "evg.sav2013@yandex.ru";
-    private String password = "zohbei4C";
+    private static String username;
+    private static String password;
     
     @Override
     public String getUsername() {

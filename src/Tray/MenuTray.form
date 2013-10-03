@@ -25,6 +25,14 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </MenuItem>
+        <MenuItem class="java.awt.MenuItem" name="Configure">
+          <Properties>
+            <Property name="label" type="java.lang.String" value="Configure"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConfigureActionPerformed"/>
+          </Events>
+        </MenuItem>
       </SubComponents>
     </Menu>
   </NonVisualComponents>
