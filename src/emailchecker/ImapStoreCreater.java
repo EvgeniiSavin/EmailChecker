@@ -4,6 +4,7 @@
  */
 package emailchecker;
 
+import emailchecker.UserPermissions;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;

@@ -4,6 +4,8 @@
  */
 package emailchecker;
 
+import emailchecker.UserPermissions;
+
 /**
  *
  * @author user102

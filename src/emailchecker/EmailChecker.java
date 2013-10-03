@@ -4,6 +4,7 @@
  */
 package emailchecker;
 
+import ImapServersProperties.YandexImapServer;
 import Tray.Tray;
 import java.awt.AWTException;
 import javax.mail.Folder;
