@@ -4,11 +4,8 @@
  */
 package emailchecker;
 
+import Tray.Tray;
 import java.awt.AWTException;
-import java.awt.Image;
-import java.awt.SystemTray;
-import java.awt.Toolkit;
-import java.awt.TrayIcon;
 import javax.mail.Folder;
 import javax.mail.MessagingException;
 import javax.mail.Store;
@@ -24,13 +21,7 @@ public class EmailChecker {
      */
     public static void main(String[] args) throws MessagingException, AWTException {
         
-        SystemTray tray = SystemTray.getSystemTray();
-        Image image = Toolkit.getDefaultToolkit().createImage("C:\\Users\\horch\\Documents\\NetBeansProjects\\EmailChecker\\src\\emailchecker\\icon.png");
-        TrayIcon trayIcon = new TrayIcon(image, "EmailChecker");
-        tray.add(trayIcon);
-        
-        
-        
+        Tray tray = new Tray();
         
         YandexImapServer imapServer = new YandexImapServer();
         ImapProvider imapProvider = new ImapProvider();
