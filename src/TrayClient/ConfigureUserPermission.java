@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Tray;
+package TrayClient;
 
-import emailchecker.ImapUserPermission;
+import DataStoreOfService.UserPermissionProperties;
 
 /**
  *
@@ -90,7 +90,7 @@ public class ConfigureUserPermission extends javax.swing.JFrame {
     }//GEN-LAST:event_UsernameFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ImapUserPermission userPermission = new ImapUserPermission();
+        UserPermissionProperties userPermission = new UserPermissionProperties();
         userPermission.setUsername(UsernameField.getText());
         userPermission.setPassword(PasswordField.getText());
     }//GEN-LAST:event_jButton1ActionPerformed

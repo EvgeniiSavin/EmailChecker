@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package emailchecker;
+package DataStoreOfService;
 
 import javax.mail.Provider;
 
@@ -10,7 +10,7 @@ import javax.mail.Provider;
  *
  * @author user102
  */
-public class ImapProvider {
+public class ComSunMailImapProvider {
     
     private Provider imapProvider;
     private String PROTOCOL = "imap";
@@ -18,7 +18,7 @@ public class ImapProvider {
     private String VENDOR = "";
     private String VERSION = "";
             
-    ImapProvider() {
+    public ComSunMailImapProvider() {
         imapProvider = new Provider(Provider.Type.STORE, PROTOCOL, CLASSNAME, VENDOR, VERSION);
     }
     

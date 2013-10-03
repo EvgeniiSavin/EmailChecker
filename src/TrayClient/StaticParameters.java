@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Tray;
+package TrayClient;
 
 /**
  *
@@ -10,7 +10,7 @@ package Tray;
  */
 public class StaticParameters {
     
-    public static final String PATH_ICON_TRAY = "src\\emailchecker\\icon.png";
+    public static final String PATH_ICON_TRAY = "src\\TrayClient\\icon.png";
     public static final String NAME_ICON_TRAY = "EmailChecker";
     
 }

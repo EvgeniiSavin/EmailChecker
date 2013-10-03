@@ -2,23 +2,21 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ImapServersProperties;
+package DataStoreOfService;
 
-import emailchecker.ImapServerInterface;
 import java.util.Properties;
 
 /**
  *
  * @author horch
  */
-public class YandexImapServer implements ImapServerInterface {
+public class YandexImapServerProperties {
 
     public final String SERVER_NAME = "imap.yandex.ru";
     public final String SERVER_PORT = "993";
     private final String SERVER_SSL_ENABLE = "true";
     private final String SERVER_TRANSPORT = "imap";
     
-    @Override
     public Properties getProperties() {
         Properties propertiesOfImapServer = new Properties();
         

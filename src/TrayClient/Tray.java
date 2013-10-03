@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Tray;
+package TrayClient;
 
 import java.awt.AWTException;
 import java.awt.Image;
@@ -37,6 +37,11 @@ public class Tray {
         } catch (AWTException ex) {
             Logger.getLogger(Tray.class.getName()).log(Level.SEVERE, "IconTray is not correct", ex);
         }
+        
+        ServerConnector serverConnection = new ServerConnector();
+        String lineFromServer = serverConnection.getLineFromServer();
+        
+        System.out.println(lineFromServer);
         
     }
 
