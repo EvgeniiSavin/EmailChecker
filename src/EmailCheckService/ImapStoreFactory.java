@@ -32,7 +32,7 @@ public class ImapStoreFactory {
         
         try {
             imapStore = imapSession.getStore(imapProvider);
-            
+            // Store connect to Imap Server with User permission
             imapStore.connect(  userPermissions.getProperty("username"),
                                 userPermissions.getProperty("password"));
             

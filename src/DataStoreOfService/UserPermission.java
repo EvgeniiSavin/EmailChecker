@@ -12,11 +12,11 @@ import java.util.Properties;
  *
  * @author user102
  */
-public class UserPermissionProperties {
+public class UserPermission {
     
     //This properties will need write to XML
-    private String username = "evg.sav2013@yandex.ru";
-    private String password = "zohbei4C";
+    private String username;
+    private String password;
     
     public void setUsername(String username) {
         this.username = username;
@@ -26,11 +26,12 @@ public class UserPermissionProperties {
         this.password = password;
     }
     
-    public Properties getUserProperties() {
-        Properties userProperties = new Properties();
-        userProperties.put("username", username);
-        userProperties.put("password", password);
-        return userProperties;
+    public String getUsername() {
+        return this.username;
+    }
+    
+    public String getPassword() {
+        return this.password;
     }
     
 }

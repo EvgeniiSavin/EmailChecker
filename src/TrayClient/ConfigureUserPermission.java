@@ -4,7 +4,7 @@
  */
 package TrayClient;
 
-import DataStoreOfService.UserPermissionProperties;
+import DataStoreOfService.UserPermission;
 
 /**
  *
@@ -90,7 +90,7 @@ public class ConfigureUserPermission extends javax.swing.JFrame {
     }//GEN-LAST:event_UsernameFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        UserPermissionProperties userPermission = new UserPermissionProperties();
+        UserPermission userPermission = new UserPermission();
         userPermission.setUsername(UsernameField.getText());
         userPermission.setPassword(PasswordField.getText());
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -5,7 +5,7 @@
 package EmailCheckService;
 
 import DataStoreOfService.ComSunMailImapProvider;
-import DataStoreOfService.UserPermissionProperties;
+import DataStoreOfService.UserPermission;
 import DataStoreOfService.YandexImapServerProperties;
 import TrayClient.SystemTrayApplication;
 import TrayClient.TrayOperator;
@@ -32,7 +32,7 @@ public class EmailCheckService {
         
         Properties serverProperties = new YandexImapServerProperties().getProperties();
         Provider imapProvider = new ComSunMailImapProvider().getProvider();
-        Properties userPermission = new UserPermissionProperties().getUserProperties();
+        Properties userPermission = new UserPermission().getUserProperties();
                 
         Store imapStore = 
                 new ImapStoreFactory().createImapStore( serverProperties,

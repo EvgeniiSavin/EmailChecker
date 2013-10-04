@@ -25,7 +25,7 @@ public class SystemTrayApplication {
     
     public SystemTrayApplication() {
         
-        this.image = Toolkit.getDefaultToolkit().getImage(StaticParameters.PATH_ICON_TRAY);
+        this.image = Toolkit.getDefaultToolkit().createImage(StaticParameters.PATH_ICON_TRAY);
         this.menuTray = new MenuTray();
         this.trayIcon = new TrayIcon(image, StaticParameters.NAME_ICON_TRAY);
         this.trayIcon.setPopupMenu(menuTray.popupMenu);
