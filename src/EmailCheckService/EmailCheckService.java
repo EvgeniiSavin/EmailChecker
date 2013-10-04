@@ -7,8 +7,8 @@ package EmailCheckService;
 import DataStoreOfService.ComSunMailImapProvider;
 import DataStoreOfService.UserPermissionProperties;
 import DataStoreOfService.YandexImapServerProperties;
-import TrayClient.ServerConnector;
-import TrayClient.Tray;
+import TrayClient.SystemTrayApplication;
+import TrayClient.TrayOperator;
 import java.awt.AWTException;
 import java.util.Properties;
 import javax.mail.MessagingException;
@@ -25,10 +25,10 @@ public class EmailCheckService {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws MessagingException, AWTException {
-        // Start ServerConnector
-        
         // Start ClientTray
-        new Tray();
+        SystemTrayApplication trayApplication = new SystemTrayApplication();
+        TrayOperator trayOperator = new TrayOperator(trayApplication);
+        
         
         Properties serverProperties = new YandexImapServerProperties().getProperties();
         Provider imapProvider = new ComSunMailImapProvider().getProvider();
@@ -40,10 +40,9 @@ public class EmailCheckService {
                                                         userPermission );
         
         ImapStoreOperator storeOperator = new ImapStoreOperator(imapStore);
-        TrayClientInformator clientInformator = new TrayClientInformator();
         
         if(storeOperator.checkNewMessage()) 
-            clientInformator.sendEventOfNewMessage();
+            trayOperator.sendInfoMessage("New Message!");
         
         
     }

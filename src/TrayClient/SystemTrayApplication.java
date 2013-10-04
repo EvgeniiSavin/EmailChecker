@@ -16,14 +16,14 @@ import java.util.logging.Logger;
  *
  * @author user102
  */
-public class Tray {
+public class SystemTrayApplication {
     
     SystemTray tray;
     TrayIcon trayIcon;
     Image image;
     MenuTray menuTray;
     
-    public Tray() {
+    public SystemTrayApplication() {
         
         this.image = Toolkit.getDefaultToolkit().getImage(StaticParameters.PATH_ICON_TRAY);
         this.menuTray = new MenuTray();
@@ -35,14 +35,9 @@ public class Tray {
         try {
             tray.add(trayIcon);
         } catch (AWTException ex) {
-            Logger.getLogger(Tray.class.getName()).log(Level.SEVERE, "IconTray is not correct", ex);
+            Logger.getLogger(SystemTrayApplication.class.getName()).log(Level.SEVERE, "IconTray is not correct", ex);
         }
         
-        ServerConnector serverConnection = new ServerConnector();
-        String lineFromServer = serverConnection.getLineFromServer();
-        
-        System.out.println(lineFromServer);
-        
     }
-
+    
 }
