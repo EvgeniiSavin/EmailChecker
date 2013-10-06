@@ -6,8 +6,8 @@ package EmailCheckService;
 
 import DataStoreOfService.ComSunMailImapProvider;
 import DataStoreOfService.YandexImapServerProperties;
-import TrayClient.SystemTrayApplication;
-import TrayClient.TrayOperator;
+import TrayInformer.SystemTrayApplication;
+import TrayInformer.TrayOperator;
 import java.awt.AWTException;
 import java.util.Properties;
 import javax.mail.MessagingException;
@@ -27,6 +27,7 @@ public class EmailCheckService {
         // Start ClientTray
         SystemTrayApplication trayApplication = new SystemTrayApplication();
         TrayOperator trayOperator = new TrayOperator(trayApplication);
+        
         
         
         Properties serverProperties = new YandexImapServerProperties().getProperties();
