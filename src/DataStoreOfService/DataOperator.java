@@ -4,14 +4,10 @@
  */
 package DataStoreOfService;
 
-import java.io.IOException;
 import java.util.UUID;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.jdom2.Attribute;
 import org.jdom2.Document;
 import org.jdom2.Element;
-import org.jdom2.output.XMLOutputter;
 
 /**
  *
