@@ -16,8 +16,7 @@ import org.jdom2.output.XMLOutputter;
  */
 public class XMLOperator {
     
-    public void writeToXML(Document xml, String fileName) {
-        // TODO: add write to fileName File!!
+    public void showDocumentIntConsole(Document xml) {
         
         XMLOutputter output = new XMLOutputter();
         try {
@@ -25,6 +24,7 @@ public class XMLOperator {
         } catch (IOException ex) {
             Logger.getLogger(XMLOperator.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
     
     

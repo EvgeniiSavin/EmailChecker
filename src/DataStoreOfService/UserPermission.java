@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package EmailCheckService;
+package DataStoreOfService;
 
 /**
  *
@@ -10,10 +10,14 @@ package EmailCheckService;
  */
 public class UserPermission {
     
+    private String nameProfile;
     private String username;
     private String password;
     private String server;
     
+    public void setNameProfile(String nameProfile) {
+        this.nameProfile = nameProfile;
+    }
     public void setUsername(String username) {
         this.username = username;
     }
@@ -24,6 +28,10 @@ public class UserPermission {
     
     public void setServer(String server) {
         this.server = server;
+    }
+    
+    public String getNameProfile() {
+        return this.nameProfile;
     }
     
     public String getUsername() {

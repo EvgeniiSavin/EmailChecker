@@ -12,7 +12,6 @@ import java.awt.AWTException;
 import java.util.Properties;
 import javax.mail.MessagingException;
 import javax.mail.Provider;
-import javax.mail.Store;
 
 /**
  *
@@ -32,8 +31,8 @@ public class EmailCheckService {
         
         Properties serverProperties = new YandexImapServerProperties().getProperties();
         Provider imapProvider = new ComSunMailImapProvider().getProvider();
-        Properties userPermission = new XmlUserPermission().getUserProperties();
-                
+        //Properties userPermission = new XmlUserPermission().getUserProperties();
+        /*        
         Store imapStore = 
                 new ImapStoreFactory().createImapStore( serverProperties,
                                                         imapProvider,
@@ -43,7 +42,7 @@ public class EmailCheckService {
         
         if(storeOperator.checkNewMessage()) 
             trayOperator.sendInfoMessage("New Message!");
-        
+        */
         
     }
 
