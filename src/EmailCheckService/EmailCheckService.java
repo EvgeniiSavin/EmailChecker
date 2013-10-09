@@ -5,9 +5,10 @@
 package EmailCheckService;
 
 import DataStoreOfService.ComSunMailImapProvider;
+import DataStoreOfService.UserPermission;
+import DataStoreOfService.UserPermissionOperator;
 import DataStoreOfService.YandexImapServerProperties;
 import TrayInformer.SystemTrayApplication;
-import TrayInformer.TrayOperator;
 import java.awt.AWTException;
 import java.util.Properties;
 import javax.mail.MessagingException;
@@ -25,13 +26,18 @@ public class EmailCheckService {
     public static void main(String[] args) throws MessagingException, AWTException {
         // Start ClientTray
         SystemTrayApplication trayApplication = new SystemTrayApplication();
-        TrayOperator trayOperator = new TrayOperator(trayApplication);
+        //TrayOperator trayOperator = new TrayOperator(trayApplication);
         
         
         
         Properties serverProperties = new YandexImapServerProperties().getProperties();
         Provider imapProvider = new ComSunMailImapProvider().getProvider();
+        
+        UserPermission userPermission = new UserPermissionOperator().getUserPermission();
+        
+        
         //Properties userPermission = new XmlUserPermission().getUserProperties();
+        
         /*        
         Store imapStore = 
                 new ImapStoreFactory().createImapStore( serverProperties,

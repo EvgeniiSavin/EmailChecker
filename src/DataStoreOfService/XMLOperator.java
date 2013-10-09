@@ -16,17 +16,18 @@ import org.jdom2.output.XMLOutputter;
  */
 public class XMLOperator {
     
-    public void showDocumentIntConsole(Document xml) {
+    public void showDocumentIntConsole(Document xmlDocument) {
         
         XMLOutputter output = new XMLOutputter();
-        try {
-            output.output(xml, System.out);
-        } catch (IOException ex) {
-            Logger.getLogger(XMLOperator.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        String stringXMLDocument;
+        stringXMLDocument = output.outputString(xmlDocument);
+        
+        System.out.println(stringXMLDocument);
         
     }
     
-    
+    public void writeDocumentToFile(Document xmlDocument) {
+        
+    }
     
 }

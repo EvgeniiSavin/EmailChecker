@@ -18,19 +18,22 @@ import java.util.logging.Logger;
  */
 public class SystemTrayApplication {
     
-    SystemTray tray;
-    TrayIcon trayIcon;
-    Image image;
-    MenuTray menuTray;
+    private SystemTray tray;
+    private TrayIcon trayIcon;
+    private Image image;
+    private MenuTray menuTray;
     
+    /**
+     *
+     */
     public SystemTrayApplication() {
         
-        this.image = Toolkit.getDefaultToolkit().createImage(StaticParameters.PATH_ICON_TRAY);
-        this.menuTray = new MenuTray();
-        this.trayIcon = new TrayIcon(image, StaticParameters.NAME_ICON_TRAY);
-        this.trayIcon.setPopupMenu(menuTray.popupMenu);
+        image = Toolkit.getDefaultToolkit().createImage(StaticParameters.PATH_ICON_TRAY);
+        menuTray = new MenuTray();
+        trayIcon = new TrayIcon(image, StaticParameters.NAME_ICON_TRAY);
+        trayIcon.setPopupMenu(menuTray.popupMenu);
         
-        this.tray = SystemTray.getSystemTray();
+        tray = SystemTray.getSystemTray();
         
         try {
             tray.add(trayIcon);
