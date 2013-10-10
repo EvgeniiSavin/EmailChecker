@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package TrayInformer;
+package Permission;
 
 
 /**
@@ -29,8 +29,8 @@ public class ConfigureUserPermission extends javax.swing.JFrame {
 
         UsernameField = new javax.swing.JTextField();
         PasswordField = new javax.swing.JTextField();
-        ButtonOk = new javax.swing.JButton();
         ButtonCancel = new javax.swing.JButton();
+        ButtonOk = new javax.swing.JButton();
 
         UsernameField.setText("Username");
         UsernameField.setToolTipText("");
@@ -42,9 +42,9 @@ public class ConfigureUserPermission extends javax.swing.JFrame {
 
         PasswordField.setText("Password");
 
-        ButtonOk.setText("Ok");
-
         ButtonCancel.setText("Cancel");
+
+        ButtonOk.setText("Ok");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -70,8 +70,8 @@ public class ConfigureUserPermission extends javax.swing.JFrame {
                 .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonOk)
-                    .addComponent(ButtonCancel))
+                    .addComponent(ButtonCancel)
+                    .addComponent(ButtonOk))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 

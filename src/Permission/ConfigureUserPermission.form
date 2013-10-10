@@ -44,8 +44,8 @@
               <Component id="PasswordField" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="ButtonOk" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="ButtonCancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ButtonOk" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -67,6 +67,11 @@
         <Property name="text" type="java.lang.String" value="Password"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JButton" name="ButtonCancel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cancel"/>
+      </Properties>
+    </Component>
     <Component class="javax.swing.JButton" name="ButtonOk">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ok"/>
@@ -74,11 +79,6 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="ButtonCancel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cancel"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>

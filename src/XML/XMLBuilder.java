@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package DataStoreOfService;
+package XML;
 
+import Permission.UserPermission;
 import org.jdom2.Document;
 import org.jdom2.Element;
 

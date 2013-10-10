@@ -4,11 +4,12 @@
  */
 package EmailCheckService;
 
-import DataStoreOfService.ComSunMailImapProvider;
-import DataStoreOfService.UserPermission;
-import DataStoreOfService.UserPermissionOperator;
-import DataStoreOfService.YandexImapServerProperties;
-import TrayInformer.SystemTrayApplication;
+import XML.ComSunMailImapProvider;
+import Permission.UserPermission;
+import Permission.UserPermissionOperator;
+import XML.YandexImapServerProperties;
+import Permission.ConfigureUserPermission;
+import SystemTray.SystemTrayApplication;
 import java.awt.AWTException;
 import java.util.Properties;
 import javax.mail.MessagingException;
@@ -35,6 +36,7 @@ public class EmailCheckService {
         
         UserPermission userPermission = new UserPermissionOperator().getUserPermission();
         
+
         
         //Properties userPermission = new XmlUserPermission().getUserProperties();
         

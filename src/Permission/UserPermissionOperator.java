@@ -2,9 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package DataStoreOfService;
-
-import TrayInformer.ConfigureUserPermission;
+package Permission;
 
 /**
  *
@@ -17,11 +15,13 @@ public class UserPermissionOperator {
     }
     
     public UserPermission getUserPermission() {
-        
-        if( isHavePermission() ) {
+
+        if( !isHavePermission() ) {
             ConfigureUserPermission window = new ConfigureUserPermission();
-            window.ButtonOk.setVisible(true);
-            window.ButtonOk.show();
+            window.setVisible(true);
+            window.show();
+            
+            
         }
         
         return null;
@@ -29,6 +29,10 @@ public class UserPermissionOperator {
     
     private boolean isHavePermission() {
         return false;
+    }
+    
+    private void requestPermissionByForm() {
+        
     }
     
 }

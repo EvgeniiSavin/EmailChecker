@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package EmailCheckService;
+package IMAP;
 
-import DataStoreOfService.YandexImapServerProperties;
+import XML.YandexImapServerProperties;
 import java.util.Properties;
 
 /**

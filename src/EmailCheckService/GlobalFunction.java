@@ -8,7 +8,7 @@ package EmailCheckService;
  *
  * @author user102
  */
-public class GlobalOperator {
+public class GlobalFunction {
     
     public static void EXIT() {
         System.exit(0);
