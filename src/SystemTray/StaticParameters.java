@@ -10,7 +10,7 @@ package SystemTray;
  */
 public class StaticParameters {
     
-    public static final String PATH_ICON_TRAY = "src\\TrayInformer\\TrayIcon.png";
+    public static final String PATH_ICON_TRAY = "src\\SystemTray\\TrayIcon.png";
     public static final String NAME_ICON_TRAY = "EmailCheckService";
     
 }

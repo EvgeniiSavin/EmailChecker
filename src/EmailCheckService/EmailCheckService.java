@@ -36,7 +36,7 @@ public class EmailCheckService {
         
         UserPermission userPermission = new UserPermissionOperator().getUserPermission();
         
-
+        System.out.println(userPermission.getUsername() + " " + userPermission.getPassword());
         
         //Properties userPermission = new XmlUserPermission().getUserProperties();
         

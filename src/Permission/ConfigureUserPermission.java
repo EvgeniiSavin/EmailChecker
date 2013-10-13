@@ -76,6 +76,7 @@ public class ConfigureUserPermission extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameFieldActionPerformed
@@ -119,7 +120,7 @@ public class ConfigureUserPermission extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonCancel;
     public javax.swing.JButton ButtonOk;
-    private javax.swing.JTextField PasswordField;
-    private javax.swing.JTextField UsernameField;
+    public javax.swing.JTextField PasswordField;
+    public javax.swing.JTextField UsernameField;
     // End of variables declaration//GEN-END:variables
 }

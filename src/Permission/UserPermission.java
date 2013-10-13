@@ -46,4 +46,5 @@ public class UserPermission {
         return this.server;
     }
     
+    
 }
