@@ -8,14 +8,13 @@ import IMAP.ImapStoreFactory;
 import IMAP.ImapStoreOperator;
 import Store.ComSunMailImapProvider;
 import Permission.UserPermission;
-import Permission.UserPermissionOperator;
 import Store.YandexImapServerProperties;
 import SystemTray.SystemTrayApplication;
 import java.awt.AWTException;
 import java.util.ArrayList;
 import java.util.Properties;
-import java.util.Timer;
 import java.util.concurrent.TimeUnit;
+import javax.mail.Folder;
 import javax.mail.MessagingException;
 import javax.mail.Provider;
 import javax.mail.Store;
@@ -36,16 +35,12 @@ public class EmailCheckService {
         // Start ClientTray
         SystemTrayApplication trayApplication = new SystemTrayApplication();
         //TrayOperator trayOperator = new TrayOperator(trayApplication);
-        Timer timer = new Timer();
+        
         
         
         Properties serverProperties = new YandexImapServerProperties().getProperties();
         Provider imapProvider = new ComSunMailImapProvider().getProvider();
         
-        
-        //UserPermission userPermission = new UserPermissionOperator().getUserPermission();
-        //System.out.println(userPermission.getUsername() + " " + userPermission.getPassword());
-        //Properties userPermission = new XmlUserPermission().getUserProperties();
         while(true) {
             System.out.println(boxUserPermission.isEmpty());
             if(!boxUserPermission.isEmpty()) {
@@ -54,14 +49,16 @@ public class EmailCheckService {
                                                                 imapProvider,
                                                                 boxUserPermission.get(0));
 
-               ImapStoreOperator storeOperator = new ImapStoreOperator(imapStore);
+               //ImapStoreOperator storeOperator = new ImapStoreOperator(imapStore);
 
-                if(storeOperator.checkNewMessage()) 
-                    System.out.println("New Message!");
-                    //trayOperator.sendInfoMessage("New Message!");
-                
+               Folder[] folders = imapStore.getDefaultFolder().list();
+               
+               for(Folder folder:folders) {
+                   System.out.println(folder.getName() + ": " + folder.getMessageCount());
+               }
+
             }
-            TimeUnit.SECONDS.sleep(3);
+            TimeUnit.SECONDS.sleep(10);
         }
         
     }
