@@ -18,7 +18,7 @@ public class ImapStoreOperator {
     
     Store imapStore;
     
-    ImapStoreOperator(Store imapStore) {
+    public ImapStoreOperator(Store imapStore) {
         this.imapStore = imapStore;
     }
 

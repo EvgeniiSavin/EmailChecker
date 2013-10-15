@@ -4,7 +4,7 @@
  */
 package IMAP;
 
-import XML.YandexImapServerProperties;
+import Store.YandexImapServerProperties;
 import java.util.Properties;
 
 /**

@@ -4,6 +4,7 @@
  */
 package IMAP;
 
+import Permission.UserPermission;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,13 +20,13 @@ import javax.mail.Store;
  */
 public class ImapStoreFactory {
        
-    ImapStoreFactory() {
+    public ImapStoreFactory() {
         
     }
     
     public Store createImapStore(   Properties imapServerProperties,
                                     Provider imapProvider,
-                                    Properties userPermissions) {
+                                    UserPermission userPermissions) {
         
         Session imapSession = Session.getInstance(imapServerProperties);
         Store imapStore = null;
@@ -33,8 +34,8 @@ public class ImapStoreFactory {
         try {
             imapStore = imapSession.getStore(imapProvider);
             // Store connect to Imap Server with User permission
-            imapStore.connect(  userPermissions.getProperty("username"),
-                                userPermissions.getProperty("password"));
+            imapStore.connect(  userPermissions.getUsername(),
+                                userPermissions.getPassword());
             
         } catch (NoSuchProviderException ex) {
             Logger.getLogger(ImapStoreFactory.class.getName()).log(Level.SEVERE, "Imap Provider is not correct!", ex);

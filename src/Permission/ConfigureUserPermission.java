@@ -4,6 +4,8 @@
  */
 package Permission;
 
+import EmailCheckService.EmailCheckService;
+
 
 /**
  *
@@ -45,6 +47,11 @@ public class ConfigureUserPermission extends javax.swing.JFrame {
         ButtonCancel.setText("Cancel");
 
         ButtonOk.setText("Ok");
+        ButtonOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonOkActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,6 +89,14 @@ public class ConfigureUserPermission extends javax.swing.JFrame {
     private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UsernameFieldActionPerformed
+
+    private void ButtonOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOkActionPerformed
+        UserPermission userPerm = new UserPermission();
+        userPerm.setUsername(UsernameField.getText());
+        userPerm.setPassword(PasswordField.getText());
+        // Add userPermission to boxUserPermission
+        EmailCheckService.boxUserPermission.add(userPerm);
+    }//GEN-LAST:event_ButtonOkActionPerformed
 
     /**
      * @param args the command line arguments
