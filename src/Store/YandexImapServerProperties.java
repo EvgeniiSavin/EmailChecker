@@ -10,13 +10,14 @@ import java.util.Properties;
  *
  * @author horch
  */
-public class YandexImapServerProperties {
+public class YandexImapServerProperties implements ServerPropertiesInterface {
 
     public final String SERVER_NAME = "imap.yandex.ru";
     public final String SERVER_PORT = "993";
     private final String SERVER_SSL_ENABLE = "true";
     private final String SERVER_TRANSPORT = "imap";
     
+    @Override
     public Properties getProperties() {
         Properties propertiesOfImapServer = new Properties();
         

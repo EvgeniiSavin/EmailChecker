@@ -4,7 +4,6 @@
  */
 package SystemTray;
 
-import Permission.ConfigureUserPermission;
 import EmailCheckService.GlobalFunction;
 
 /**

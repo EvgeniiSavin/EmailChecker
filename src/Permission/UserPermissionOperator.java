@@ -4,6 +4,8 @@
  */
 package Permission;
 
+import SystemTray.ConfigureUserPermission;
+
 /**
  *
  * @author horch
