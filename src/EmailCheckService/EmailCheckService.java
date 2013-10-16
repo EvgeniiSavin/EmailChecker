@@ -5,13 +5,10 @@
 package EmailCheckService;
 
 import IMAP.ImapStoreFactory;
-import IMAP.ImapStoreOperator;
 import Store.ComSunMailImapProvider;
-import Permission.UserPermission;
 import Store.YandexImapServerProperties;
 import SystemTray.SystemTrayApplication;
 import java.awt.AWTException;
-import java.util.ArrayList;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import javax.mail.Folder;
@@ -39,14 +36,15 @@ public class EmailCheckService {
         
         Properties serverProperties = new YandexImapServerProperties().getProperties();
         Provider imapProvider = new ComSunMailImapProvider().getProvider();
+        UsersPermissionOperator userPermOperator = new UsersPermissionOperator();
         
         while(true) {
             //System.out.println(boxUserPermission.isEmpty());
-            if(!boxUserPermission.isEmpty()) {
+            if(userPermOperator.isHasUserPermission()) {
                 Store imapStore = 
                         new ImapStoreFactory().createImapStore( serverProperties,
                                                                 imapProvider,
-                                                                boxUserPermission.get(0));
+                                                                userPermOperator.getNextUserPermission());
 
                //ImapStoreOperator storeOperator = new ImapStoreOperator(imapStore);
 

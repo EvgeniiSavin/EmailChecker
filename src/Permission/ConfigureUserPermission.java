@@ -5,6 +5,7 @@
 package Permission;
 
 import EmailCheckService.EmailCheckService;
+import EmailCheckService.UsersPermissionOperator;
 
 
 /**
@@ -94,8 +95,9 @@ public class ConfigureUserPermission extends javax.swing.JFrame {
         UserPermission userPerm = new UserPermission();
         userPerm.setUsername(UsernameField.getText());
         userPerm.setPassword(PasswordField.getText());
-        // Add userPermission to boxUserPermission
-        EmailCheckService.boxUserPermission.add(userPerm);
+        // Add userPermission to arrayOfUserPermission
+        new UsersPermissionOperator().addUserPermission(userPerm);
+        this.setVisible(false);
     }//GEN-LAST:event_ButtonOkActionPerformed
 
     /**
