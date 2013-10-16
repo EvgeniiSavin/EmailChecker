@@ -25,8 +25,7 @@ import javax.mail.Store;
  */
 public class EmailCheckService {
     
-    public static ArrayList<UserPermission> boxUserPermission = 
-                        new ArrayList<UserPermission>();
+    
     
     /**
      * @param args the command line arguments
@@ -42,7 +41,7 @@ public class EmailCheckService {
         Provider imapProvider = new ComSunMailImapProvider().getProvider();
         
         while(true) {
-            System.out.println(boxUserPermission.isEmpty());
+            //System.out.println(boxUserPermission.isEmpty());
             if(!boxUserPermission.isEmpty()) {
                 Store imapStore = 
                         new ImapStoreFactory().createImapStore( serverProperties,
