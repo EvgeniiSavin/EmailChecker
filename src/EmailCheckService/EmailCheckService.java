@@ -8,7 +8,6 @@ import IMAP.ImapStoreFactory;
 import IMAP.ComSunMailImapProvider;
 import SystemTray.SystemTrayApplication;
 import java.awt.AWTException;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import javax.mail.Folder;
 import javax.mail.MessagingException;

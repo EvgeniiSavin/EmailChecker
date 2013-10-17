@@ -56,11 +56,6 @@ public class Profile extends javax.swing.JFrame {
         LabelImapServer.setText("Imap Server");
 
         ImapServerNameField.setText("Imap server name (For example: imap.yandex.ru)");
-        ImapServerNameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ImapServerNameFieldActionPerformed(evt);
-            }
-        });
 
         ImapServerPortField.setText("Imap Server Port");
         ImapServerPortField.setToolTipText("");
@@ -149,10 +144,6 @@ public class Profile extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ImapServerNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImapServerNameFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ImapServerNameFieldActionPerformed
-
     private void ButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_ButtonCancelActionPerformed
@@ -184,6 +175,7 @@ public class Profile extends javax.swing.JFrame {
         
         // Add objProfileContainer to Static array of ProfileContainer
         StaticArrayProfileContainers.addProfileContainer(objProfileContainer);
+        
         
         // Hide "this" Window
         this.setVisible(false);

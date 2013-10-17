@@ -32,11 +32,7 @@ public class MainConfigureWindow extends javax.swing.JFrame {
         ButtonDelete = new javax.swing.JButton();
         ButtonEdit = new javax.swing.JButton();
 
-        WindowViewOfProfile.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
+        WindowViewOfProfile.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jScrollPane1.setViewportView(WindowViewOfProfile);
 
         ButtonAdd.setText("Add");
@@ -86,6 +82,7 @@ public class MainConfigureWindow extends javax.swing.JFrame {
     private void ButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAddActionPerformed
         Profile objProfile = new Profile();
         objProfile.setVisible(true);
+        //objProfile;
     }//GEN-LAST:event_ButtonAddActionPerformed
 
     /**
