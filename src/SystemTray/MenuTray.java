@@ -73,9 +73,9 @@ public class MenuTray extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitActionPerformed
 
     private void ConfigureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfigureActionPerformed
-        ConfigureUserPermission userPermission = new ConfigureUserPermission();
-        userPermission.setVisible(true);
-        userPermission.show();
+        MainConfigureWindow mainConfigureWindow = new MainConfigureWindow();
+        mainConfigureWindow.setVisible(true);
+        mainConfigureWindow.show();
     }//GEN-LAST:event_ConfigureActionPerformed
 
     /**

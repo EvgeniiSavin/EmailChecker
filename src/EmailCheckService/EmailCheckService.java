@@ -40,11 +40,12 @@ public class EmailCheckService {
         
         while(true) {
             //System.out.println(boxUserPermission.isEmpty());
-            if(userPermOperator.isHasUserPermission()) {
+            if(!StaticArrayProfileContainers.isEmpty()) {
+                
                 Store imapStore = 
-                        new ImapStoreFactory().createImapStore( serverProperties,
+                        new ImapStoreFactory().createImapStore( StaticArrayProfileContainers.getProfileContainer(0).getImapServerProperties().getProperties(),
                                                                 imapProvider,
-                                                                userPermOperator.getNextUserPermission());
+                                                                StaticArrayProfileContainers.getProfileContainer(0).getUserPermission());
 
                //ImapStoreOperator storeOperator = new ImapStoreOperator(imapStore);
 
@@ -53,6 +54,13 @@ public class EmailCheckService {
                for(Folder folder:folders) {
                    System.out.println(folder.getName() + ": " + folder.getMessageCount());
                }
+               
+               folders = imapStore.getDefaultFolder().list();
+               
+               for(Folder folder:folders) {
+                   System.out.println(folder.getName() + ": " + folder.getMessageCount());
+               }
+               
 
             }
             TimeUnit.SECONDS.sleep(10);

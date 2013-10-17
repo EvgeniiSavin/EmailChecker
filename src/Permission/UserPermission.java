@@ -10,15 +10,11 @@ package Permission;
  */
 public class UserPermission {
     
-    private String nameProfile = "";
     private String username = "";
     private String password = "";
     private String server = "";
-    private boolean isHavePermission = false;
     
-    public void setNameProfile(String nameProfile) {
-        this.nameProfile = nameProfile;
-    }
+    
     public void setUsername(String username) {
         this.username = username;
     }
@@ -29,10 +25,6 @@ public class UserPermission {
     
     public void setServer(String server) {
         this.server = server;
-    }
-    
-    public String getNameProfile() {
-        return this.nameProfile;
     }
     
     public String getUsername() {
@@ -46,14 +38,5 @@ public class UserPermission {
     public String getServer() {
         return this.server;
     }
-    
-    public void setIsHavePermission(boolean isHavePermission) {
-        this.isHavePermission = isHavePermission;
-    }
-    
-    public boolean isHavePermission() {
-        return isHavePermission;
-    }
-    
     
 }

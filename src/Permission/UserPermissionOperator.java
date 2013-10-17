@@ -20,14 +20,10 @@ public class UserPermissionOperator  {
     }
     
     public UserPermission getUserPermission() {
-        //ListenerExecutor listenerExecutor = new ListenerExecutor();
         
         if( !isHavePermission() ) {
             window = new ConfigureUserPermission();
             window.setVisible(true);
-            //window.show();
-            //window.ButtonOk.addActionListener(listenerExecutor);
-            
         }
         
         return user;
