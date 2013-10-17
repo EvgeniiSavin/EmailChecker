@@ -5,8 +5,7 @@
 package EmailCheckService;
 
 import IMAP.ImapStoreFactory;
-import Store.ComSunMailImapProvider;
-import Store.YandexImapServerProperties;
+import IMAP.ComSunMailImapProvider;
 import SystemTray.SystemTrayApplication;
 import java.awt.AWTException;
 import java.util.Properties;
@@ -34,7 +33,6 @@ public class EmailCheckService {
         
         
         
-        Properties serverProperties = new YandexImapServerProperties().getProperties();
         Provider imapProvider = new ComSunMailImapProvider().getProvider();
         UsersPermissionOperator userPermOperator = new UsersPermissionOperator();
         

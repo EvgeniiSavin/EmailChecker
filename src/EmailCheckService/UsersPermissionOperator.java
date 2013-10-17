@@ -4,7 +4,6 @@
  */
 package EmailCheckService;
 
-import Permission.UserPermission;
 import java.util.ArrayList;
 
 /**

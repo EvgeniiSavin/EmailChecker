@@ -7,7 +7,7 @@ package SystemTray;
 import EmailCheckService.ImapServerPropertiesImpl;
 import EmailCheckService.ProfileContainer;
 import EmailCheckService.StaticArrayProfileContainers;
-import Permission.UserPermission;
+import EmailCheckService.UserPermission;
 
 /**
  *

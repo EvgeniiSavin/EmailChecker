@@ -6,7 +6,7 @@ package SystemTray;
 
 import EmailCheckService.EmailCheckService;
 import EmailCheckService.UsersPermissionOperator;
-import Permission.UserPermission;
+import EmailCheckService.UserPermission;
 
 
 /**

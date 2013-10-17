@@ -4,7 +4,7 @@
  */
 package IMAP;
 
-import Permission.UserPermission;
+import EmailCheckService.UserPermission;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;

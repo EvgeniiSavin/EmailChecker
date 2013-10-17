@@ -4,8 +4,6 @@
  */
 package EmailCheckService;
 
-import Permission.UserPermission;
-
 /**
  *
  * @author user102
