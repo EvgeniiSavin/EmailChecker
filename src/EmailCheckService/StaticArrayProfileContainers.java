@@ -30,4 +30,5 @@ public class StaticArrayProfileContainers {
     public static boolean isEmpty() {
         return staticProfileContainer.isEmpty();
     }
+
 }

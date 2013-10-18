@@ -73,9 +73,13 @@ public class MenuTray extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitActionPerformed
 
     private void ConfigureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfigureActionPerformed
+        /*
         MainConfigureWindow mainConfigureWindow = new MainConfigureWindow();
         mainConfigureWindow.setVisible(true);
         mainConfigureWindow.show();
+        */
+        Profile profileWindow = new Profile();
+        profileWindow.setVisible(true);
     }//GEN-LAST:event_ConfigureActionPerformed
 
     /**
