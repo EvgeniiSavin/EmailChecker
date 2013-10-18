@@ -12,18 +12,18 @@ import java.util.ArrayList;
  */
 public class StaticArrayProfileContainers {
     
-    private static ArrayList<ProfileContainer> staticProfileContainer =
-            new ArrayList<ProfileContainer>();
+    private static ArrayList<AccountSettings> staticProfileContainer =
+            new ArrayList<AccountSettings>();
     
     StaticArrayProfileContainers() {
         
     }
     
-    public static void addProfileContainer(ProfileContainer objectProfileContainer) {
+    public static void addProfileContainer(AccountSettings objectProfileContainer) {
         staticProfileContainer.add(objectProfileContainer);
     }
     
-    public static ProfileContainer getProfileContainer(int positionProfileContainer) {
+    public static AccountSettings getProfileContainer(int positionProfileContainer) {
         return staticProfileContainer.get(positionProfileContainer);
     }
     

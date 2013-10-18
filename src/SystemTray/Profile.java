@@ -5,7 +5,7 @@
 package SystemTray;
 
 import EmailCheckService.ImapServerPropertiesImpl;
-import EmailCheckService.ProfileContainer;
+import EmailCheckService.AccountSettings;
 import EmailCheckService.StaticArrayProfileContainers;
 import EmailCheckService.UserPermission;
 
@@ -167,13 +167,13 @@ public class Profile extends javax.swing.JFrame {
         }
         
         
-        // Configure ProfileContainer
-        ProfileContainer objProfileContainer = new ProfileContainer();
+        // Configure AccountSettings
+        AccountSettings objProfileContainer = new AccountSettings();
         objProfileContainer.setProfileName(NameProfileField.getText());
         objProfileContainer.setUserPrermission(objUserPermission);
         objProfileContainer.setImapServerProperties(objImapServerProperties);
         
-        // Add objProfileContainer to Static array of ProfileContainer
+        // Add objProfileContainer to Static array of AccountSettings
         StaticArrayProfileContainers.addProfileContainer(objProfileContainer);
         
         
