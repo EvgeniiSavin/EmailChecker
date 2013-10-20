@@ -6,7 +6,6 @@ package EmailCheckService;
 
 import SystemTray.SystemTrayApplication;
 import java.awt.AWTException;
-import java.util.concurrent.TimeUnit;
 import javax.mail.MessagingException;
 
 /**
