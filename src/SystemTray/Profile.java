@@ -4,10 +4,10 @@
  */
 package SystemTray;
 
-import EmailCheckService.AccountProperties;
-import IMAP.ServerProperties;
-import EmailCheckService.ArrayOfAccountProperties;
-import IMAP.UserProperties;
+import Properties.AccountProperties;
+import Properties.ServerProperties;
+import Properties.ArrayOfAccountProperties;
+import Properties.UserProperties;
 
 /**
  *

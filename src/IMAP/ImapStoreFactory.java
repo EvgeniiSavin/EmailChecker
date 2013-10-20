@@ -4,7 +4,7 @@
  */
 package IMAP;
 
-import EmailCheckService.AccountProperties;
+import Properties.AccountProperties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.mail.MessagingException;

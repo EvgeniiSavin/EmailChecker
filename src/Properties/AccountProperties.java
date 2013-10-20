@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package EmailCheckService;
+package Properties;
 
-import IMAP.ServerProperties;
-import IMAP.UserProperties;
+import Properties.ServerProperties;
+import Properties.UserProperties;
 
 /**
  *
