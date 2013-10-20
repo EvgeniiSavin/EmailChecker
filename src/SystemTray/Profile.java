@@ -4,10 +4,10 @@
  */
 package SystemTray;
 
-import EmailCheckService.ImapServerPropertiesImpl;
-import EmailCheckService.AccountSettings;
-import EmailCheckService.StaticArrayProfileContainers;
-import EmailCheckService.UserPermission;
+import EmailCheckService.AccountProperties;
+import IMAP.ServerProperties;
+import EmailCheckService.ArrayOfAccountProperties;
+import IMAP.UserProperties;
 
 /**
  *
@@ -35,9 +35,9 @@ public class Profile extends javax.swing.JFrame {
         UserLoginField = new javax.swing.JTextField();
         UserPasswordField = new javax.swing.JTextField();
         LabelImapServer = new javax.swing.JLabel();
-        ImapServerNameField = new javax.swing.JTextField();
-        ImapServerPortField = new javax.swing.JTextField();
-        NameProfileField = new javax.swing.JTextField();
+        ServerHostField = new javax.swing.JTextField();
+        ServerPortField = new javax.swing.JTextField();
+        NameAccountField = new javax.swing.JTextField();
         LabelProfileName = new javax.swing.JLabel();
         CheckBoxUseSSLconnection = new javax.swing.JCheckBox();
         jSeparator1 = new javax.swing.JSeparator();
@@ -48,23 +48,24 @@ public class Profile extends javax.swing.JFrame {
         LabelUser.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         LabelUser.setText("User");
 
-        UserLoginField.setText("Login (For example: user@google.com)");
+        UserLoginField.setText("evg.sav2013@yandex.ru");
 
         UserPasswordField.setText("Password");
+        UserPasswordField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         LabelImapServer.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         LabelImapServer.setText("Imap Server");
 
-        ImapServerNameField.setText("Imap server name (For example: imap.yandex.ru)");
+        ServerHostField.setText("imap.yandex.ru");
 
-        ImapServerPortField.setText("Imap Server Port");
-        ImapServerPortField.setToolTipText("");
+        ServerPortField.setText("993");
+        ServerPortField.setToolTipText("");
 
-        NameProfileField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        NameProfileField.setText("Name Profile");
+        NameAccountField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        NameAccountField.setText("Name of account");
 
         LabelProfileName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        LabelProfileName.setText("Profile Name");
+        LabelProfileName.setText("Account Name");
 
         CheckBoxUseSSLconnection.setText("Use SSL connection");
 
@@ -93,20 +94,20 @@ public class Profile extends javax.swing.JFrame {
                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(UserPasswordField, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(UserLoginField)
-                    .addComponent(ImapServerNameField)
-                    .addComponent(ImapServerPortField)
-                    .addComponent(NameProfileField)
+                    .addComponent(ServerHostField)
+                    .addComponent(ServerPortField)
+                    .addComponent(NameAccountField)
                     .addComponent(CheckBoxUseSSLconnection, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LabelImapServer, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelProfileName, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(LabelUser))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(ButtonOk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ButtonOk, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ButtonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ButtonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LabelProfileName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -115,7 +116,7 @@ public class Profile extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addComponent(LabelProfileName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NameProfileField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NameAccountField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
@@ -129,9 +130,9 @@ public class Profile extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelImapServer, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ImapServerNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ServerHostField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ImapServerPortField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ServerPortField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CheckBoxUseSSLconnection)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
@@ -150,35 +151,33 @@ public class Profile extends javax.swing.JFrame {
 
     private void ButtonOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOkActionPerformed
         
-        //Configure UserPermission
-        UserPermission objUserPermission = new UserPermission();
-        objUserPermission.setUsername(UserLoginField.getText());
-        objUserPermission.setPassword(UserPasswordField.getText());
+        // Configure User Properties
+        UserProperties userPropeties = new UserProperties();
+        userPropeties.setLogin(UserLoginField.getText());
+        userPropeties.setPassword(UserPasswordField.getText());
         
-        //Configure ServerProperties
-        ImapServerPropertiesImpl objImapServerProperties = new ImapServerPropertiesImpl();
-        objImapServerProperties.setImapServerName(ImapServerNameField.getText());
-        objImapServerProperties.setImapServerPort(ImapServerPortField.getText());
-        
+        // Configure Server Properties
+        ServerProperties serverProperties = new ServerProperties();
+        serverProperties.setHost(ServerHostField.getText());
+        serverProperties.setPort(ServerPortField.getText());
+
         if(CheckBoxUseSSLconnection.isSelected()) {
-            objImapServerProperties.useSSLforServer("true");
+            serverProperties.enableSSL("true");
         } else {
-            objImapServerProperties.useSSLforServer("false");
+            serverProperties.enableSSL("false");
         }
         
+        // Add User and server properties to AccountProperties
+        AccountProperties accountProp = new AccountProperties();
+        accountProp.addUserProperties(userPropeties);
+        accountProp.addServerProperties(serverProperties);
         
-        // Configure AccountSettings
-        AccountSettings objProfileContainer = new AccountSettings();
-        objProfileContainer.setProfileName(NameProfileField.getText());
-        objProfileContainer.setUserPrermission(objUserPermission);
-        objProfileContainer.setImapServerProperties(objImapServerProperties);
-        
-        // Add objProfileContainer to Static array of AccountSettings
-        StaticArrayProfileContainers.addProfileContainer(objProfileContainer);
-        
+        // Add AccountProperties object to ArrayOfAccountProperties
+        ArrayOfAccountProperties.addAccountProperties(accountProp);
         
         // Hide "this" Window
         this.setVisible(false);
+        
     }//GEN-LAST:event_ButtonOkActionPerformed
 
     /**
@@ -219,12 +218,12 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JButton ButtonCancel;
     private javax.swing.JButton ButtonOk;
     private javax.swing.JCheckBox CheckBoxUseSSLconnection;
-    private javax.swing.JTextField ImapServerNameField;
-    private javax.swing.JTextField ImapServerPortField;
     private javax.swing.JLabel LabelImapServer;
     private javax.swing.JLabel LabelProfileName;
     private javax.swing.JLabel LabelUser;
-    private javax.swing.JTextField NameProfileField;
+    private javax.swing.JTextField NameAccountField;
+    private javax.swing.JTextField ServerHostField;
+    private javax.swing.JTextField ServerPortField;
     private javax.swing.JTextField UserLoginField;
     private javax.swing.JTextField UserPasswordField;
     private javax.swing.JSeparator jSeparator1;

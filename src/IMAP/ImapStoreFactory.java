@@ -4,8 +4,7 @@
  */
 package IMAP;
 
-import EmailCheckService.UserPermission;
-import java.util.Properties;
+import EmailCheckService.AccountProperties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.mail.MessagingException;
@@ -19,23 +18,23 @@ import javax.mail.Store;
  * @author user102
  */
 public class ImapStoreFactory {
-       
+    
     public ImapStoreFactory() {
         
     }
     
-    public Store createImapStore(   Properties imapServerProperties,
-                                    Provider imapProvider,
-                                    UserPermission userPermissions) {
+    public Store createImapStore(   AccountProperties accountProperties,
+                                    Provider imapProvider) {
         
-        Session imapSession = Session.getInstance(imapServerProperties);
+        
+        Session imapSession = Session.getInstance(accountProperties.getServerProperties().getAllProperties());
         Store imapStore = null;
         
         try {
             imapStore = imapSession.getStore(imapProvider);
             // Store connect to Imap Server with User permission
-            imapStore.connect(  userPermissions.getUsername(),
-                                userPermissions.getPassword());
+            imapStore.connect(  accountProperties.getUserProperties().getLogin(),
+                                accountProperties.getUserProperties().getPassword());
             
         } catch (NoSuchProviderException ex) {
             Logger.getLogger(ImapStoreFactory.class.getName()).log(Level.SEVERE, "Imap Provider is not correct!", ex);

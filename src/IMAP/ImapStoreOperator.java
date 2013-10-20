@@ -38,4 +38,18 @@ public class ImapStoreOperator {
         return result;
     }
     
+    public int getCountNotReadMessage() {
+        int countNewMessage = 0;
+        try {
+            Folder[] imapFolders = imapStore.getDefaultFolder().list();
+            for(Folder imapFolder:imapFolders) {
+                countNewMessage = countNewMessage + imapFolder.getUnreadMessageCount();
+            }
+        } catch (MessagingException ex) {
+            Logger.getLogger(ImapStoreOperator.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return countNewMessage;
+    }
+    
 }

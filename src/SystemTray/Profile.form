@@ -27,23 +27,23 @@
                   <Component id="jSeparator1" alignment="1" max="32767" attributes="0"/>
                   <Component id="UserPasswordField" alignment="1" max="32767" attributes="0"/>
                   <Component id="UserLoginField" alignment="0" max="32767" attributes="0"/>
-                  <Component id="ImapServerNameField" alignment="0" max="32767" attributes="0"/>
-                  <Component id="ImapServerPortField" alignment="0" max="32767" attributes="0"/>
-                  <Component id="NameProfileField" alignment="0" max="32767" attributes="0"/>
+                  <Component id="ServerHostField" alignment="0" max="32767" attributes="0"/>
+                  <Component id="ServerPortField" alignment="0" max="32767" attributes="0"/>
+                  <Component id="NameAccountField" alignment="0" max="32767" attributes="0"/>
                   <Component id="CheckBoxUseSSLconnection" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="LabelImapServer" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
-                          <Component id="LabelProfileName" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
                           <Component id="LabelUser" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="ButtonOk" max="32767" attributes="0"/>
+                      <Component id="ButtonOk" pref="122" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="ButtonCancel" min="-2" pref="118" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="LabelProfileName" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -55,7 +55,7 @@
               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
               <Component id="LabelProfileName" min="-2" pref="26" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="NameProfileField" min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="NameAccountField" min="-2" pref="30" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
@@ -69,9 +69,9 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="LabelImapServer" min="-2" pref="24" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="ImapServerNameField" min="-2" max="-2" attributes="0"/>
+              <Component id="ServerHostField" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="ImapServerPortField" min="-2" max="-2" attributes="0"/>
+              <Component id="ServerPortField" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="CheckBoxUseSSLconnection" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="15" max="32767" attributes="0"/>
@@ -95,12 +95,15 @@
     </Component>
     <Component class="javax.swing.JTextField" name="UserLoginField">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Login (For example: user@google.com)"/>
+        <Property name="text" type="java.lang.String" value="evg.sav2013@yandex.ru"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="UserPasswordField">
       <Properties>
         <Property name="text" type="java.lang.String" value="Password"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Text Cursor"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="LabelImapServer">
@@ -111,23 +114,23 @@
         <Property name="text" type="java.lang.String" value="Imap Server"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ImapServerNameField">
+    <Component class="javax.swing.JTextField" name="ServerHostField">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Imap server name (For example: imap.yandex.ru)"/>
+        <Property name="text" type="java.lang.String" value="imap.yandex.ru"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ImapServerPortField">
+    <Component class="javax.swing.JTextField" name="ServerPortField">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Imap Server Port"/>
+        <Property name="text" type="java.lang.String" value="993"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="NameProfileField">
+    <Component class="javax.swing.JTextField" name="NameAccountField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Name Profile"/>
+        <Property name="text" type="java.lang.String" value="Name of account"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="LabelProfileName">
@@ -135,7 +138,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Profile Name"/>
+        <Property name="text" type="java.lang.String" value="Account Name"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="CheckBoxUseSSLconnection">
