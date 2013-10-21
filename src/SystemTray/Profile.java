@@ -6,7 +6,7 @@ package SystemTray;
 
 import Properties.AccountProperties;
 import Properties.ServerProperties;
-import Properties.ArrayOfAccountProperties;
+import Properties.ArrayOfAccountsProperties;
 import Properties.UserProperties;
 
 /**
@@ -172,8 +172,8 @@ public class Profile extends javax.swing.JFrame {
         accountProp.addUserProperties(userPropeties);
         accountProp.addServerProperties(serverProperties);
         
-        // Add AccountProperties object to ArrayOfAccountProperties
-        ArrayOfAccountProperties.addAccountProperties(accountProp);
+        // Add AccountProperties object to ArrayOfAccountsProperties
+        ArrayOfAccountsProperties.addAccountProperties(accountProp);
         
         // Hide "this" Window
         this.setVisible(false);

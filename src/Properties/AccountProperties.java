@@ -4,9 +4,6 @@
  */
 package Properties;
 
-import Properties.ServerProperties;
-import Properties.UserProperties;
-
 /**
  *
  * @author user102

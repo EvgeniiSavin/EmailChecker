@@ -8,9 +8,8 @@ import IMAP.ComSunMailImapProvider;
 import IMAP.ImapStoreFactory;
 import IMAP.ImapStoreOperator;
 import Properties.AccountProperties;
-import Properties.ArrayOfAccountProperties;
+import Properties.ArrayOfAccountsProperties;
 import SystemTray.SystemTrayApplicationOperator;
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,32 +20,44 @@ import javax.mail.Store;
  *
  * @author horch
  */
-//public class ServiceChecker implements ArrayOfAccountPropertiesListenerInterface {
+
 public class ServiceChecker {
     
+    private SystemTrayApplicationOperator trayOperator;
+    private Provider imapProvider;
+    private AccountProperties accountProperties;
+    private Store imapStore;
+    private ImapStoreOperator imapStoreOperator;
+    private int countUnreadMessage;
+    private int countNewMessage;
+    private String infoMessage;
+    
     ServiceChecker() {
+        
+        trayOperator = new SystemTrayApplicationOperator();
+        imapProvider = new ComSunMailImapProvider().getProvider();
         checkNewEmail();
+
     }
     
     private void checkNewEmail() {
-        
-        Provider imapProvider = new ComSunMailImapProvider().getProvider();
-        
-        if(!ArrayOfAccountProperties.isEmpty()) {
-            AccountProperties accountProperties = ArrayOfAccountProperties.popAccountProperty();
+        // Check Static Array which contain AccountProperties for a Accounts
+        if(!ArrayOfAccountsProperties.isEmpty()) {
             
-            Store imapStore = new ImapStoreFactory().createImapStore( accountProperties, imapProvider);
+            accountProperties = ArrayOfAccountsProperties.popAccountProperty();
 
-            ImapStoreOperator imapChecker = new ImapStoreOperator(imapStore);
+            imapStore = new ImapStoreFactory().createImapStore( accountProperties, imapProvider);
 
-            int countUnreadMessage = imapChecker.getCountNotReadMessage();
+            imapStoreOperator = new ImapStoreOperator(imapStore);
 
-            SystemTrayApplicationOperator trayOperator = new SystemTrayApplicationOperator();
+            countUnreadMessage = imapStoreOperator.getSumUnreadMessage();
 
-            String infoMessage = "You have a unread message: " + countUnreadMessage;
+            infoMessage = createStringOfUnreadMessage(countUnreadMessage);
 
             trayOperator.showInfoMessage(infoMessage);
+            
         }
+        // Check new unread messages every 10 seconds
         waitTenSeconds();
 
         checkNewEmail();
@@ -59,5 +70,10 @@ public class ServiceChecker {
             Logger.getLogger(ServiceChecker.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
+   private String createStringOfUnreadMessage(int countUnreadMessage) {
+       return "You have a unread message: " + countUnreadMessage;
+   }
+   
+   
 }

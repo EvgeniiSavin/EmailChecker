@@ -38,7 +38,7 @@ public class ImapStoreOperator {
         return result;
     }
     
-    public int getCountNotReadMessage() {
+    public int getSumUnreadMessage() {
         int countNewMessage = 0;
         try {
             Folder[] imapFolders = imapStore.getDefaultFolder().list();

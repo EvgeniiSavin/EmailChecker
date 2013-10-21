@@ -4,15 +4,13 @@
  */
 package Properties;
 
-import Properties.AccountProperties;
-
 /**
  *
  * @author horch
  */
 public interface ArrayOfAccountPropertiesListenerInterface {
     
-    public void newAddedAccountProperties(AccountProperties accountProperties);
+    public void newAccountProperties();
     //public void deleteAccountProperties(AccountProperties accountProperties);
     
 }

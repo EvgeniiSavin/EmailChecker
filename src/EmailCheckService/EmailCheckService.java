@@ -4,7 +4,6 @@
  */
 package EmailCheckService;
 
-import Properties.ArrayOfAccountProperties;
 import SystemTray.SystemTrayApplication;
 import java.awt.AWTException;
 import javax.mail.MessagingException;
@@ -23,13 +22,10 @@ public class EmailCheckService {
     public static void main(String[] args) throws MessagingException, AWTException, InterruptedException {
         // Start ClientTray
         SystemTrayApplication trayApplication = new SystemTrayApplication();
-        //TrayOperator trayOperator = new TrayOperator(trayApplication);
-        new ServiceChecker();
         
-        //ServiceChecker accountListener = new ServiceChecker();
+        ServiceChecker accountListener = new ServiceChecker();
         
         //ArrayOfAccountProperties.addListener(accountListener);
-        
     }
-    
+
 }

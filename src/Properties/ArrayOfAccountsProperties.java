@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author user102
  */
-public class ArrayOfAccountProperties {
+public class ArrayOfAccountsProperties {
     
     private static ArrayList<AccountProperties> arrayAccountProperties =
             new ArrayList<AccountProperties>();
@@ -22,15 +22,13 @@ public class ArrayOfAccountProperties {
     
     private static int globalArrayPosition = 0;
     
-    ArrayOfAccountProperties() {
+    ArrayOfAccountsProperties() {
         
     }
     
     public static void addAccountProperties(AccountProperties objectProfileContainer) {
         arrayAccountProperties.add(objectProfileContainer);
-        for(ArrayOfAccountPropertiesListenerInterface listener:listeners) {
-            listener.newAddedAccountProperties(objectProfileContainer);
-        }
+        sendInfoToListeners();
     }
     
     public static AccountProperties getAccountProperties(int positionProfileContainer) {
@@ -53,6 +51,13 @@ public class ArrayOfAccountProperties {
         listeners.add(objectListener);
     }
     
+    private static void sendInfoToListeners() {
+    
+        for(ArrayOfAccountPropertiesListenerInterface listener:listeners) {
+            listener.newAccountProperties();
+        }
+ 
+    }
     
 
 }
