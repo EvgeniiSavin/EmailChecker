@@ -6,8 +6,9 @@ package SystemTray;
 
 import Properties.AccountProperties;
 import Properties.ServerProperties;
-import Properties.ArrayOfAccountsProperties;
 import Properties.UserProperties;
+import newLogic.ArrayOfCheckers;
+import newLogic.CheckerFactory;
 
 /**
  *
@@ -171,9 +172,15 @@ public class Profile extends javax.swing.JFrame {
         AccountProperties accountProp = new AccountProperties();
         accountProp.addUserProperties(userPropeties);
         accountProp.addServerProperties(serverProperties);
-        
+        /*
         // Add AccountProperties object to ArrayOfAccountsProperties
         ArrayOfAccountsProperties.addAccountProperties(accountProp);
+        */
+        
+        // Create Email checker 
+        CheckerFactory emailChecker = new CheckerFactory(accountProp);
+        Thread emailCheckThread = new Thread(emailChecker);
+        ArrayOfCheckers.addChecker(emailCheckThread);
         
         // Hide "this" Window
         this.setVisible(false);

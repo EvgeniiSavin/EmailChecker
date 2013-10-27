@@ -23,9 +23,6 @@ public class EmailCheckService {
         // Start ClientTray
         SystemTrayApplication trayApplication = new SystemTrayApplication();
         
-        ServiceChecker accountListener = new ServiceChecker();
-        
-        //ArrayOfAccountProperties.addListener(accountListener);
     }
 
 }
