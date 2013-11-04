@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package newLogic;
+package EmailCheckService;
 
 import java.util.ArrayList;
 
@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author horch
  */
-public class ArrayOfCheckers {
+public class ThreadCheckerExecutor {
     
     private static ArrayList<Thread> arrayOfCheckers = new ArrayList<Thread>();
     

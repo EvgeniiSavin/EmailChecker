@@ -7,8 +7,8 @@ package SystemTray;
 import Properties.AccountProperties;
 import Properties.ServerProperties;
 import Properties.UserProperties;
-import newLogic.ArrayOfCheckers;
-import newLogic.CheckerFactory;
+import EmailCheckService.ThreadCheckerExecutor;
+import EmailCheckService.CheckerFactory;
 
 /**
  *
@@ -180,7 +180,7 @@ public class Profile extends javax.swing.JFrame {
         // Create Email checker 
         CheckerFactory emailChecker = new CheckerFactory(accountProp);
         Thread emailCheckThread = new Thread(emailChecker);
-        ArrayOfCheckers.addChecker(emailCheckThread);
+        ThreadCheckerExecutor.addChecker(emailCheckThread);
         
         // Hide "this" Window
         this.setVisible(false);
