@@ -5,7 +5,6 @@
 package SystemTray;
 
 import Properties.AccountProperties;
-import Properties.ServerProperties;
 import EmailCheckService.ThreadCheckerExecutor;
 import EmailCheckService.CheckerFactory;
 import XML.WriteXMLtoFile;
@@ -166,7 +165,7 @@ public class Profile extends javax.swing.JFrame {
         
         
         // Create Email checker 
-        CheckerFactory emailChecker = new CheckerFactory(accountProp);
+        CheckerFactory emailChecker = new CheckerFactory(accountPropeties);
         Thread emailCheckThread = new Thread(emailChecker);
         ThreadCheckerExecutor.addChecker(emailCheckThread);
         
