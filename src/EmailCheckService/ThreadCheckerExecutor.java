@@ -4,7 +4,8 @@
  */
 package EmailCheckService;
 
-import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  *
@@ -12,11 +13,13 @@ import java.util.ArrayList;
  */
 public class ThreadCheckerExecutor {
     
-    private static ArrayList<Thread> arrayOfCheckers = new ArrayList<Thread>();
+    //private static ArrayList<Thread> arrayOfCheckers = new ArrayList<Thread>();
+    private static ExecutorService arrayOfRunningThreadCheckers = Executors.newCachedThreadPool();
     
     public static void addChecker(Thread checker) {
-        arrayOfCheckers.add(checker);
-        checker.start();
+        arrayOfRunningThreadCheckers.submit(checker);
+        //arrayOfCheckers.add(checker);
+        //checker.start();
     }
     
 }

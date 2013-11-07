@@ -6,9 +6,9 @@ package SystemTray;
 
 import Properties.AccountProperties;
 import Properties.ServerProperties;
-import Properties.UserProperties;
 import EmailCheckService.ThreadCheckerExecutor;
 import EmailCheckService.CheckerFactory;
+import XML.WriteXMLtoFile;
 
 /**
  *
@@ -152,30 +152,18 @@ public class Profile extends javax.swing.JFrame {
 
     private void ButtonOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOkActionPerformed
         
-        // Configure User Properties
-        UserProperties userPropeties = new UserProperties();
-        userPropeties.setLogin(UserLoginField.getText());
-        userPropeties.setPassword(UserPasswordField.getText());
-        
-        // Configure Server Properties
-        ServerProperties serverProperties = new ServerProperties();
-        serverProperties.setHost(ServerHostField.getText());
-        serverProperties.setPort(ServerPortField.getText());
+        // Configure AccountProperties
+        AccountProperties accountPropeties = new AccountProperties();
 
-        if(CheckBoxUseSSLconnection.isSelected()) {
-            serverProperties.enableSSL("true");
-        } else {
-            serverProperties.enableSSL("false");
-        }
+        accountPropeties.setAccountName(NameAccountField.getText());
+        accountPropeties.setLogin(UserLoginField.getText());
+        accountPropeties.setPassword(UserPasswordField.getText());
+        accountPropeties.setImapServerHost(ServerHostField.getText());
+        accountPropeties.setImapServerPort(ServerPortField.getText());
+        accountPropeties.setImapSSLStatus(CheckBoxUseSSLconnection.isSelected());
         
-        // Add User and server properties to AccountProperties
-        AccountProperties accountProp = new AccountProperties();
-        accountProp.addUserProperties(userPropeties);
-        accountProp.addServerProperties(serverProperties);
-        /*
-        // Add AccountProperties object to ArrayOfAccountsProperties
-        ArrayOfAccountsProperties.addAccountProperties(accountProp);
-        */
+
+        
         
         // Create Email checker 
         CheckerFactory emailChecker = new CheckerFactory(accountProp);
