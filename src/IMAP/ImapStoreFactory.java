@@ -34,8 +34,8 @@ public class ImapStoreFactory {
         try {
             imapStore = imapSession.getStore(imapProvider);
             // Store connect to Imap Server with User permission
-            imapStore.connect(  accountProperties.getLogin(),
-                                accountProperties.getPassword());
+            imapStore.connect(  accountProperties.getUserLogin(),
+                                accountProperties.getUserPassword());
             
         } catch (NoSuchProviderException ex) {
             Logger.getLogger(ImapStoreFactory.class.getName()).log(Level.SEVERE, "Imap Provider is not correct!", ex);
@@ -49,9 +49,9 @@ public class ImapStoreFactory {
     public Properties getServerProperties(AccountProperties accountProperties) {
         Properties serverProp = new Properties();
 
-        serverProp.setProperty("mail.imap.host", accountProperties.getImapServerHost());
-        serverProp.setProperty("mail.imap.port", accountProperties.getImapServerPort());
-        serverProp.setProperty("mail.imap.ssl.enable", (accountProperties.getImapSSLStatus()?"true":"false") );
+        serverProp.setProperty("mail.imap.host", accountProperties.getServerHost());
+        serverProp.setProperty("mail.imap.port", accountProperties.getServerPort());
+        serverProp.setProperty("mail.imap.ssl.enable", accountProperties.getServerSSLStatus());
         serverProp.setProperty("mail.transport.protocol", "imap");
 
         return serverProp;

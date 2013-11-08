@@ -11,67 +11,76 @@ package Properties;
 public class AccountProperties {
 
     private String accountName;
-    private String login;
-    private String password;
-    private String imapServerHost;
-    private String imapServerPort;
-    private boolean imapSSLStatus;
+    private String userLogin;
+    private String userPassword;
+    private String serverHost;
+    private String serverPort;
+    private String serverProtocol;
+    private String serverSSLStatus;
     
     public AccountProperties() {
         this.accountName = null;
-        this.login = null;
-        this.password = null;
-        this.imapServerHost = null;
-        this.imapServerPort = null;
-        this.imapSSLStatus = false;
+        this.userLogin = null;
+        this.userPassword = null;
+        this.serverHost = null;
+        this.serverPort = null;
+        this.serverSSLStatus = null;
     }
     
     public void setAccountName(String accountName) {
         this.accountName = accountName;
     }
     
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUserLogin(String login) {
+        this.userLogin = login;
     }
     
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUserPassword(String password) {
+        this.userPassword = password;
     }
     
-    public void setImapServerHost(String imapServerHost) {
-        this.imapServerHost = imapServerHost;
+    public void setServerHost(String imapServerHost) {
+        this.serverHost = imapServerHost;
     }
     
-    public void setImapServerPort(String imapServerPort) {
-        this.imapServerPort = imapServerPort;
+    public void setServerPort(String imapServerPort) {
+        this.serverPort = imapServerPort;
     }
     
-    public void setImapSSLStatus(boolean imapSSLStatus) {
-        this.imapSSLStatus = imapSSLStatus;
+    public void setServerProtocol(String serverProtocol) {
+        this.serverProtocol = serverProtocol;
+    }
+    
+    public void setServerSSLStatus(String imapSSLStatus) {
+        this.serverSSLStatus = imapSSLStatus;
     }
     
     public String getAccountName() {
         return this.accountName;
     }
     
-    public String getLogin() {
-        return this.login;
+    public String getUserLogin() {
+        return this.userLogin;
     }
     
-    public String getPassword() {
-        return this.password;
+    public String getUserPassword() {
+        return this.userPassword;
     }
     
-    public String getImapServerHost() {
-        return this.imapServerHost;
+    public String getServerHost() {
+        return this.serverHost;
     }
     
-    public String getImapServerPort() {
-        return this.imapServerPort;
+    public String getServerPort() {
+        return this.serverPort;
     }
     
-    public boolean getImapSSLStatus() {
-        return this.imapSSLStatus;
+    public String getServerProtocol() {
+        return this.serverProtocol;
+    }
+    
+    public String getServerSSLStatus() {
+        return this.serverSSLStatus;
     }
     
 }

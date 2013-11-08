@@ -155,11 +155,11 @@ public class Profile extends javax.swing.JFrame {
         AccountProperties accountPropeties = new AccountProperties();
 
         accountPropeties.setAccountName(NameAccountField.getText());
-        accountPropeties.setLogin(UserLoginField.getText());
-        accountPropeties.setPassword(UserPasswordField.getText());
-        accountPropeties.setImapServerHost(ServerHostField.getText());
-        accountPropeties.setImapServerPort(ServerPortField.getText());
-        accountPropeties.setImapSSLStatus(CheckBoxUseSSLconnection.isSelected());
+        accountPropeties.setUserLogin(UserLoginField.getText());
+        accountPropeties.setUserPassword(UserPasswordField.getText());
+        accountPropeties.setServerHost(ServerHostField.getText());
+        accountPropeties.setServerPort(ServerPortField.getText());
+        accountPropeties.setServerSSLStatus( (CheckBoxUseSSLconnection.isSelected()) ? "true" : "false" );
         
 
         
