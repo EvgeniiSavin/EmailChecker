@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<accounts><account name="Name of account"><UserProperties /><ServerProperties /></account></accounts>
+<accounts><account name="Name of account"><userLogin>evg.sav2013@yandex.ru</userLogin><userPassword>zohbei4C</userPassword><serverHost>imap.yandex.ru</serverHost><serverPort>993</serverPort><serverProtocol></serverProtocol><serverSSLStatus>true</serverSSLStatus></account></accounts>

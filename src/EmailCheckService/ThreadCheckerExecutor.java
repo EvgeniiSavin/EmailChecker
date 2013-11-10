@@ -18,8 +18,6 @@ public class ThreadCheckerExecutor {
     
     public static void addChecker(Thread checker) {
         arrayOfRunningThreadCheckers.submit(checker);
-        //arrayOfCheckers.add(checker);
-        //checker.start();
     }
     
 }

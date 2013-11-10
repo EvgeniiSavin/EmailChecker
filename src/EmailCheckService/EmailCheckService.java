@@ -5,6 +5,7 @@
 package EmailCheckService;
 
 import SystemTray.SystemTrayApplication;
+import XML.ReadXMLFromFile;
 import java.awt.AWTException;
 import javax.mail.MessagingException;
 
@@ -22,6 +23,11 @@ public class EmailCheckService {
     public static void main(String[] args) throws MessagingException, AWTException, InterruptedException {
         // Start ClientTray
         SystemTrayApplication trayApplication = new SystemTrayApplication();
+        ReadXMLFromFile accountFromXML = new ReadXMLFromFile();
+        
+        CheckerFactory emailChecker = new CheckerFactory(accountFromXML.getAccountFromXMLFile());
+        Thread emailCheckThread = new Thread(emailChecker);
+        ThreadCheckerExecutor.addChecker(emailCheckThread);
         
     }
 

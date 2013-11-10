@@ -162,7 +162,7 @@ public class Profile extends javax.swing.JFrame {
         accountPropeties.setServerSSLStatus( (CheckBoxUseSSLconnection.isSelected()) ? "true" : "false" );
         
 
-        
+        new WriteXMLtoFile().writeAccountProperties(accountPropeties);
         
         // Create Email checker 
         CheckerFactory emailChecker = new CheckerFactory(accountPropeties);
