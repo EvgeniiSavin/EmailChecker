@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package SystemTray;
+package local.java.service.emailcheck.tray;
 
-import EmailCheckService.GlobalFunction;
+import local.java.service.GlobalOperation;
 
 /**
  *
@@ -69,7 +69,7 @@ public class MenuTray extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
-        GlobalFunction.EXIT();
+        GlobalOperation.EXIT();
     }//GEN-LAST:event_ExitActionPerformed
 
     private void ConfigureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfigureActionPerformed

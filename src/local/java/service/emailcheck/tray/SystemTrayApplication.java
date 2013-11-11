@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package SystemTray;
+package local.java.service.emailcheck.tray;
 
+import local.java.service.emailcheck.variables.Variables;
 import java.awt.AWTException;
 import java.awt.Image;
 import java.awt.SystemTray;
@@ -28,9 +29,9 @@ public class SystemTrayApplication {
      */
     public SystemTrayApplication() {
         
-        image = Toolkit.getDefaultToolkit().createImage(StaticParameters.PATH_ICON_TRAY);
+        image = Toolkit.getDefaultToolkit().createImage(Variables.TRAY_ICON);
         menuTray = new MenuTray();
-        trayIcon = new TrayIcon(image, StaticParameters.NAME_ICON_TRAY);
+        trayIcon = new TrayIcon(image, Variables.NAME_ICON_TRAY);
         trayIcon.setPopupMenu(menuTray.popupMenu);
         
         tray = SystemTray.getSystemTray();

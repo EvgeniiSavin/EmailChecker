@@ -2,10 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package EmailCheckService;
+package local.java.service;
 
-import SystemTray.SystemTrayApplication;
-import XML.ReadXMLFromFile;
+import local.java.service.emailcheck.CheckerFactory;
+import local.java.service.emailcheck.ThreadCheckerExecutor;
+import local.java.service.emailcheck.tray.SystemTrayApplication;
+import local.java.service.emailcheck.accounts.operator.XMLFileReader;
 import java.awt.AWTException;
 import javax.mail.MessagingException;
 
@@ -23,7 +25,7 @@ public class EmailCheckService {
     public static void main(String[] args) throws MessagingException, AWTException, InterruptedException {
         // Start ClientTray
         SystemTrayApplication trayApplication = new SystemTrayApplication();
-        ReadXMLFromFile accountFromXML = new ReadXMLFromFile();
+        XMLFileReader accountFromXML = new XMLFileReader();
         
         CheckerFactory emailChecker = new CheckerFactory(accountFromXML.getAccountFromXMLFile());
         Thread emailCheckThread = new Thread(emailChecker);

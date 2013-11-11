@@ -2,12 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package SystemTray;
+package local.java.service.emailcheck.tray;
 
-import Properties.AccountProperties;
-import EmailCheckService.ThreadCheckerExecutor;
-import EmailCheckService.CheckerFactory;
-import XML.WriteXMLtoFile;
+import local.java.service.emailcheck.accounts.Account;
+import local.java.service.emailcheck.ThreadCheckerExecutor;
+import local.java.service.emailcheck.CheckerFactory;
+import local.java.service.emailcheck.accounts.operator.XMLFileWriter;
 
 /**
  *
@@ -151,8 +151,8 @@ public class Profile extends javax.swing.JFrame {
 
     private void ButtonOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOkActionPerformed
         
-        // Configure AccountProperties
-        AccountProperties accountPropeties = new AccountProperties();
+        // Configure Account
+        Account accountPropeties = new Account();
 
         accountPropeties.setAccountName(NameAccountField.getText());
         accountPropeties.setUserLogin(UserLoginField.getText());
@@ -162,7 +162,7 @@ public class Profile extends javax.swing.JFrame {
         accountPropeties.setServerSSLStatus( (CheckBoxUseSSLconnection.isSelected()) ? "true" : "false" );
         
 
-        new WriteXMLtoFile().writeAccountProperties(accountPropeties);
+        new XMLFileWriter().writeAccount(accountPropeties);
         
         // Create Email checker 
         CheckerFactory emailChecker = new CheckerFactory(accountPropeties);

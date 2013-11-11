@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package IMAP;
+package local.java.service.emailcheck.imap;
 
-import Properties.AccountProperties;
+import local.java.service.emailcheck.accounts.Account;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,7 +24,7 @@ public class ImapStoreFactory {
         
     }
     
-    public Store createImapStore(   AccountProperties accountProperties,
+    public Store createImapStore(   Account accountProperties,
                                     Provider imapProvider) {
         
         
@@ -46,7 +46,7 @@ public class ImapStoreFactory {
         return imapStore;
     }
     
-    public Properties getServerProperties(AccountProperties accountProperties) {
+    public Properties getServerProperties(Account accountProperties) {
         Properties serverProp = new Properties();
 
         serverProp.setProperty("mail.imap.host", accountProperties.getServerHost());

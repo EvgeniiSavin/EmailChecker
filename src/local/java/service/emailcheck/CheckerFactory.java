@@ -2,13 +2,14 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package EmailCheckService;
+package local.java.service.emailcheck;
 
-import IMAP.ComSunMailImapProvider;
-import IMAP.ImapStoreFactory;
-import IMAP.ImapStoreOperator;
-import Properties.AccountProperties;
-import SystemTray.SystemTrayApplicationOperator;
+import local.java.service.emailcheck.CheckerInterface;
+import local.java.service.emailcheck.imap.ComSunMailImapProvider;
+import local.java.service.emailcheck.imap.ImapStoreFactory;
+import local.java.service.emailcheck.imap.ImapStoreOperator;
+import local.java.service.emailcheck.accounts.Account;
+import local.java.service.emailcheck.tray.informator.SystemTrayApplicationOperator;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,7 +30,7 @@ public class CheckerFactory implements Runnable,CheckerInterface {
     private int countNewMessage;
     private String infoMessage;
     
-    public CheckerFactory(AccountProperties accountProperties) {
+    public CheckerFactory(Account accountProperties) {
         this.trayOperator = new SystemTrayApplicationOperator();
         this.imapProvider = new ComSunMailImapProvider().getProvider();
         this.imapStore = new ImapStoreFactory().createImapStore( accountProperties, imapProvider);

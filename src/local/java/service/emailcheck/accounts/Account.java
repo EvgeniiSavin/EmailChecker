@@ -2,13 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Properties;
+package local.java.service.emailcheck.accounts;
 
 /**
  *
  * @author user102
  */
-public class AccountProperties {
+public class Account {
 
     private String accountName;
     private String userLogin;
@@ -18,7 +18,7 @@ public class AccountProperties {
     private String serverProtocol;
     private String serverSSLStatus;
     
-    public AccountProperties() {
+    public Account() {
         this.accountName = null;
         this.userLogin = null;
         this.userPassword = null;
