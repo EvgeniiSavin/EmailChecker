@@ -10,9 +10,9 @@ package local.java.service.emailcheck.variables;
  */
 public class Variables {
     
-    public static final String TRAY_ICON = "src\\local\\java\\service\\files\\TrayIcon.png";
+    public static final String TRAY_ICON = "src\\local\\java\\service\\file\\TrayIcon.png";
     public static final String NAME_ICON_TRAY = "EmailCheckService";
-    public static final String ACCOUNT_PROPERTIES = "src\\local\\java\\service\\files\\properties.xml";
+    public static final String ACCOUNT_PROPERTIES = "src\\local\\java\\service\\file\\properties.xml";
     public static final String ROOT_XML_ACCOUNTS = "accounts";
     public static final String ACCOUNT = "account";
     public static final String ACCOUNT_NAME = "account_name";

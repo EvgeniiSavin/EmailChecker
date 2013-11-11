@@ -7,7 +7,8 @@ package local.java.service.emailcheck.tray;
 import local.java.service.emailcheck.accounts.Account;
 import local.java.service.emailcheck.ThreadCheckerExecutor;
 import local.java.service.emailcheck.CheckerFactory;
-import local.java.service.emailcheck.accounts.operator.XMLFileWriter;
+import local.java.service.emailcheck.accounts.operator.AccountOperator;
+import local.java.service.file.operator.PropertiesXMLFileWriter;
 
 /**
  *
@@ -151,27 +152,23 @@ public class Profile extends javax.swing.JFrame {
 
     private void ButtonOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOkActionPerformed
         
-        // Configure Account
-        Account accountPropeties = new Account();
-
-        accountPropeties.setAccountName(NameAccountField.getText());
-        accountPropeties.setUserLogin(UserLoginField.getText());
-        accountPropeties.setUserPassword(UserPasswordField.getText());
-        accountPropeties.setServerHost(ServerHostField.getText());
-        accountPropeties.setServerPort(ServerPortField.getText());
-        accountPropeties.setServerSSLStatus( (CheckBoxUseSSLconnection.isSelected()) ? "true" : "false" );
         
-
-        new XMLFileWriter().writeAccount(accountPropeties);
+        Account account = new Account();
+        AccountOperator accountOperator = new AccountOperator();
         
-        // Create Email checker 
-        CheckerFactory emailChecker = new CheckerFactory(accountPropeties);
-        Thread emailCheckThread = new Thread(emailChecker);
-        ThreadCheckerExecutor.addChecker(emailCheckThread);
+        // Configure account
+        account.setAccountName(NameAccountField.getText());
+        account.setUserLogin(UserLoginField.getText());
+        account.setUserPassword(UserPasswordField.getText());
+        account.setServerHost(ServerHostField.getText());
+        account.setServerPort(ServerPortField.getText());
+        account.setServerSSLStatus( (CheckBoxUseSSLconnection.isSelected()) ? "true" : "false" );
+        
+        // Add new account to service
+        accountOperator.addAccount(account);
         
         // Hide "this" Window
         this.setVisible(false);
-        
     }//GEN-LAST:event_ButtonOkActionPerformed
 
     /**

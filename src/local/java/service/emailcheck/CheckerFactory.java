@@ -30,10 +30,10 @@ public class CheckerFactory implements Runnable,CheckerInterface {
     private int countNewMessage;
     private String infoMessage;
     
-    public CheckerFactory(Account accountProperties) {
+    public CheckerFactory(Account account) {
         this.trayOperator = new SystemTrayApplicationOperator();
         this.imapProvider = new ComSunMailImapProvider().getProvider();
-        this.imapStore = new ImapStoreFactory().createImapStore( accountProperties, imapProvider);
+        this.imapStore = new ImapStoreFactory().createImapStore( account, imapProvider);
         this.imapStoreOperator = new ImapStoreOperator(imapStore);
     }
     

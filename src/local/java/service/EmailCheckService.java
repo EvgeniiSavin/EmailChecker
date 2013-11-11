@@ -4,12 +4,11 @@
  */
 package local.java.service;
 
-import local.java.service.emailcheck.CheckerFactory;
-import local.java.service.emailcheck.ThreadCheckerExecutor;
 import local.java.service.emailcheck.tray.SystemTrayApplication;
-import local.java.service.emailcheck.accounts.operator.XMLFileReader;
+import local.java.service.file.operator.PropertiesXMLFileReader;
 import java.awt.AWTException;
 import javax.mail.MessagingException;
+import local.java.service.emailcheck.ThreadCheckerExecutor;
 
 /**
  *
@@ -17,20 +16,15 @@ import javax.mail.MessagingException;
  */
 public class EmailCheckService {
     
-    
-    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws MessagingException, AWTException, InterruptedException {
         // Start ClientTray
         SystemTrayApplication trayApplication = new SystemTrayApplication();
-        XMLFileReader accountFromXML = new XMLFileReader();
+        PropertiesXMLFileReader accountFromXML = new PropertiesXMLFileReader();
         
-        CheckerFactory emailChecker = new CheckerFactory(accountFromXML.getAccountFromXMLFile());
-        Thread emailCheckThread = new Thread(emailChecker);
-        ThreadCheckerExecutor.addChecker(emailCheckThread);
-        
+        ThreadCheckerExecutor.startCheckers();
     }
 
 }

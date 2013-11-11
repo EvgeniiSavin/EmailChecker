@@ -6,6 +6,8 @@ package local.java.service.emailcheck;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import local.java.service.emailcheck.accounts.Account;
+import local.java.service.emailcheck.accounts.operator.AccountOperator;
 
 /**
  *
@@ -13,11 +15,25 @@ import java.util.concurrent.Executors;
  */
 public class ThreadCheckerExecutor {
     
-    //private static ArrayList<Thread> arrayOfCheckers = new ArrayList<Thread>();
     private static ExecutorService arrayOfRunningThreadCheckers = Executors.newCachedThreadPool();
     
-    public static void addChecker(Thread checker) {
+    public static void startCheckers() {
+        Account account = new AccountOperator().getAccount();
+        if( account != null ) {
+            createAndRunNewChecker(account);
+        }
+    }
+    
+    public static void createAndRunNewChecker(Account account) {
+        CheckerFactory emailChecker = new CheckerFactory(account);
+        Thread emailCheckThread = new Thread(emailChecker);
+        addChecker(emailCheckThread);
+    }
+    
+    
+    private static void addChecker(Thread checker) {
         arrayOfRunningThreadCheckers.submit(checker);
     }
+    
     
 }
