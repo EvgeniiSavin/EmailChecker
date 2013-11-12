@@ -2,13 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package local.java.service.emailcheck.tray;
+package local.java.service.emailcheck.tray.configure;
 
 import local.java.service.emailcheck.accounts.Account;
-import local.java.service.emailcheck.ThreadCheckerExecutor;
-import local.java.service.emailcheck.CheckerFactory;
 import local.java.service.emailcheck.accounts.operator.AccountOperator;
-import local.java.service.file.operator.PropertiesXMLFileWriter;
 
 /**
  *

@@ -4,6 +4,7 @@
  */
 package local.java.service.emailcheck.tray;
 
+import local.java.service.emailcheck.tray.configure.Profile;
 import local.java.service.GlobalOperation;
 
 /**
