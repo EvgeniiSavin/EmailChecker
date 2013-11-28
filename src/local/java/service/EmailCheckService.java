@@ -37,23 +37,18 @@ public class EmailCheckService {
     }
     
     public static void addAccount(Account account) {
-        
+    
         new AccountOperator().writeAccountToXML(account);
-        
         arrayOfRunningThreadCheckers.submit(createCheckThread(account));
+
     }
     
     public static Account getAccount() {
-        
         return new AccountOperator().getAccount();
     }
     
     private static Thread createCheckThread(Account account) {
-        
-        CheckerFactory emailChecker = new CheckerFactory(account);
-        Thread emailCheckThread = new Thread(emailChecker);
-        
-        return emailCheckThread;
+        return new Thread( new CheckerFactory(account) );
     }
     
 }

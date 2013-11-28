@@ -12,6 +12,9 @@ public class SystemTrayApplicationOperator {
     
     public void showInfoMessage(String infoMessage) {
         System.out.println(infoMessage);
+        WindowInfoMessage windowInfo = new WindowInfoMessage();
+        windowInfo.InformerWindow.setText(infoMessage);
+        windowInfo.show();
     }
     
 }
