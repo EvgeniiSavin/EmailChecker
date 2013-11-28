@@ -4,8 +4,9 @@
  */
 package local.java.service.emailcheck.tray.configure;
 
+import local.java.service.EmailCheckService;
 import local.java.service.emailcheck.accounts.Account;
-import local.java.service.emailcheck.accounts.operator.AccountOperator;
+import local.java.service.emailcheck.accounts.AccountOperator;
 
 /**
  *
@@ -148,12 +149,8 @@ public class Profile extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonCancelActionPerformed
 
     private void ButtonOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOkActionPerformed
-        
-        
-        Account account = new Account();
-        AccountOperator accountOperator = new AccountOperator();
-        
         // Configure account
+        Account account = new Account();
         account.setAccountName(NameAccountField.getText());
         account.setUserLogin(UserLoginField.getText());
         account.setUserPassword(UserPasswordField.getText());
@@ -162,7 +159,7 @@ public class Profile extends javax.swing.JFrame {
         account.setServerSSLStatus( (CheckBoxUseSSLconnection.isSelected()) ? "true" : "false" );
         
         // Add new account to service
-        accountOperator.addAccount(account);
+        EmailCheckService.addAccount(account);
         
         // Hide "this" Window
         this.setVisible(false);

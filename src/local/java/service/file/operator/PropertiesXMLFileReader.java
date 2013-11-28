@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import local.java.service.emailcheck.variables.Variables;
+import local.java.service.variables.Variables;
 import org.jdom2.Document;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;

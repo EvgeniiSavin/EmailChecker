@@ -4,7 +4,7 @@
  */
 package local.java.service.emailcheck.tray;
 
-import local.java.service.emailcheck.variables.Variables;
+import local.java.service.variables.Variables;
 import java.awt.AWTException;
 import java.awt.Image;
 import java.awt.SystemTray;

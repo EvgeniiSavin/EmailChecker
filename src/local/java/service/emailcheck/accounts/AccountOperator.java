@@ -2,11 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package local.java.service.emailcheck.accounts.operator;
+package local.java.service.emailcheck.accounts;
 
 import local.java.service.file.operator.PropertiesXMLFileWriter;
-import local.java.service.emailcheck.accounts.Account;
-import local.java.service.emailcheck.variables.Variables;
+import local.java.service.variables.Variables;
 import local.java.service.file.operator.PropertiesXMLFileReader;
 import org.jdom2.Attribute;
 import org.jdom2.Document;
@@ -29,7 +28,7 @@ public class AccountOperator {
         return account;
     }
     
-    public void addAccount(Account account) {
+    public void writeAccountToXML(Account account) {
         
         PropertiesXMLFileWriter documentWriter = new PropertiesXMLFileWriter();
         

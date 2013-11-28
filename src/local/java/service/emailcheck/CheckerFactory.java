@@ -4,7 +4,6 @@
  */
 package local.java.service.emailcheck;
 
-import local.java.service.emailcheck.CheckerInterface;
 import local.java.service.emailcheck.imap.ComSunMailImapProvider;
 import local.java.service.emailcheck.imap.ImapStoreFactory;
 import local.java.service.emailcheck.imap.ImapStoreOperator;
@@ -20,7 +19,7 @@ import javax.mail.Store;
  *
  * @author horch
  */
-public class CheckerFactory implements Runnable,CheckerInterface {
+public class CheckerFactory implements Runnable {
 
     private SystemTrayApplicationOperator trayOperator;
     private Provider imapProvider;

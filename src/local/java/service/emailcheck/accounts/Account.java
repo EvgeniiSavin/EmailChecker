@@ -19,12 +19,7 @@ public class Account {
     private String serverSSLStatus;
     
     public Account() {
-        this.accountName = null;
-        this.userLogin = null;
-        this.userPassword = null;
-        this.serverHost = null;
-        this.serverPort = null;
-        this.serverSSLStatus = null;
+        
     }
     
     public void setAccountName(String accountName) {
