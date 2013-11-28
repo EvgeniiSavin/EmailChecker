@@ -8,12 +8,12 @@ import local.java.service.emailcheck.imap.ComSunMailImapProvider;
 import local.java.service.emailcheck.imap.ImapStoreFactory;
 import local.java.service.emailcheck.imap.ImapStoreOperator;
 import local.java.service.emailcheck.accounts.Account;
-import local.java.service.emailcheck.tray.informator.SystemTrayApplicationOperator;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.mail.Provider;
 import javax.mail.Store;
+import local.java.service.EmailCheckService;
 
 /**
  *
@@ -21,7 +21,6 @@ import javax.mail.Store;
  */
 public class CheckerFactory implements Runnable {
 
-    private SystemTrayApplicationOperator trayOperator;
     private Provider imapProvider;
     private Store imapStore;
     private ImapStoreOperator imapStoreOperator;
@@ -30,7 +29,6 @@ public class CheckerFactory implements Runnable {
     private String infoMessage;
     
     public CheckerFactory(Account account) {
-        this.trayOperator = new SystemTrayApplicationOperator();
         this.imapProvider = new ComSunMailImapProvider().getProvider();
         this.imapStore = new ImapStoreFactory().createImapStore( account, imapProvider);
         this.imapStoreOperator = new ImapStoreOperator(imapStore);
@@ -43,7 +41,7 @@ public class CheckerFactory implements Runnable {
             waitTenSeconds();
             countUnreadMessage = imapStoreOperator.getSumUnreadMessage();
             infoMessage = createStringOfUnreadMessage(countUnreadMessage);
-            trayOperator.showInfoMessage(infoMessage);
+            EmailCheckService.showInfoMessageForUser(infoMessage);
             Thread.yield();
         }
     }

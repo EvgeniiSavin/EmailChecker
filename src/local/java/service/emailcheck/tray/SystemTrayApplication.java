@@ -31,6 +31,7 @@ public class SystemTrayApplication {
         
         image = Toolkit.getDefaultToolkit().createImage(Variables.TRAY_ICON);
         menuTray = new MenuTray();
+        
         trayIcon = new TrayIcon(image, Variables.NAME_ICON_TRAY);
         trayIcon.setPopupMenu(menuTray.popupMenu);
         
@@ -41,6 +42,15 @@ public class SystemTrayApplication {
         } catch (AWTException ex) {
             Logger.getLogger(SystemTrayApplication.class.getName()).log(Level.SEVERE, "IconTray is not correct", ex);
         }
+
+    }
+    
+    public void showInfoMessage(String message) {
+        // For test
+        System.out.println(message);
+        
+        // Show info message
+        trayIcon.displayMessage("Email info", message, TrayIcon.MessageType.INFO);
         
     }
     

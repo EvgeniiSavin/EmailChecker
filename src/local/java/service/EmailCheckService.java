@@ -5,8 +5,8 @@
 package local.java.service;
 
 import local.java.service.emailcheck.tray.SystemTrayApplication;
-import local.java.service.file.operator.PropertiesXMLFileReader;
 import java.awt.AWTException;
+import java.awt.SystemTray;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import javax.mail.MessagingException;
@@ -20,14 +20,15 @@ import local.java.service.emailcheck.accounts.AccountOperator;
  */
 public class EmailCheckService {
     
+    private static SystemTrayApplication trayApplication;
     private static ExecutorService arrayOfRunningThreadCheckers = Executors.newCachedThreadPool();
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws MessagingException, AWTException, InterruptedException {
-        // Start ClientTray
-        SystemTrayApplication trayApplication = new SystemTrayApplication();
+        
+        trayApplication = new SystemTrayApplication();
         
         Account account = getAccount();
         if( account != null ) {
@@ -51,4 +52,7 @@ public class EmailCheckService {
         return new Thread( new CheckerFactory(account) );
     }
     
+    public static void showInfoMessageForUser(String message) {
+        trayApplication.showInfoMessage(message);
+    }
 }
